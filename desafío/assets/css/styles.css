@@ -9,6 +9,7 @@ body {
     "filtro"
     "productos"
     "pie";
+  height: 100%;
 }
 .head {
   display: flex;
@@ -32,6 +33,9 @@ header {
   justify-content: end;
   width: 20vh;
   margin-left: 180px;
+}
+.opciones {
+  display: none;
 }
 menu {
   grid-area: filtro;
@@ -65,6 +69,11 @@ main {
   align-items: center;
   flex-direction: column;
 }
+
+.cardn {
+  display: none;
+}
+
 .card {
   display: flex;
   justify-content: center;
@@ -136,4 +145,118 @@ footer h2 {
   display: flex;
   justify-content: center;
   margin-bottom: 1px;
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 25% 50% 25%;
+    grid-template-areas:
+      "barra filtro"
+      "barra productos"
+      "pie productos";
+  }
+  .filter {
+    width: 75vw;
+    margin-left: 0px;
+    padding: 6px;
+    margin-bottom: 1px;
+    height: 8vh;
+    background-color: white;
+    border: solid 1px;
+  }
+  .head {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 30px;
+    width: 40vh;
+  }
+  .head h3 {
+    margin-left: 15px;
+    font-size: 2em;
+  }
+  header {
+    background-color: #00579c;
+    grid-area: barra;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+  }
+  .opciones {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+  }
+  menu h3 {
+    font-size: 2em;
+  }
+  .bar {
+    display: none;
+  }
+  .filter {
+    font-size: 1.5em;
+  }
+  main {
+    display: grid;
+    grid-gap: 20px;
+  }
+  .listado {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .card,
+  .cardn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #dfdfdf;
+    padding: 10px;
+  }
+
+  .card img,
+  .cardn img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .pags {
+    grid-area: productos;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    grid-column: span 4;
+  }
+
+  .pags ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    border: 0.5px solid #c6c6c6;
+    border-radius: 5px;
+    padding: 0;
+  }
+
+  .pags ul li {
+    border: 0.5px solid #c6c6c6;
+    padding: 15px;
+    color: #77bbff;
+  }
+
+  .pags ul li:hover {
+    cursor: pointer;
+    color: blue;
+  }
 }
